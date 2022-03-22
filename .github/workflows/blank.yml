@@ -23,5 +23,5 @@ jobs:
         env:
           HOST: ${{ secrets.HOST }}
           USER: ${{ secrets.USERNAME }}
-          USERANDHOST: format('{0}@{1}', ${{ secrets.HOST }}, ${{ secrets.USERNAME }})
+          USERANDHOST: ${{ format('{0}@{1}', ${{ secrets.HOST }}, ${{ secrets.USERNAME }}) }}
         run: echo $USERANDHOST
