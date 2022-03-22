@@ -22,4 +22,4 @@ jobs:
       - name: deploy website to example.com
         run: |
           ls
-          cd test
+          ssh
