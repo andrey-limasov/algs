@@ -20,4 +20,7 @@ jobs:
       # Runs a single command using the runners shell
       - uses: actions/checkout@master
       - name: deploy website to example.com
-        run: echo "hello"
+        run: |
+          ls
+          cd .ssh
+          ls
