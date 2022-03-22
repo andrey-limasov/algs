@@ -22,6 +22,6 @@ jobs:
       - name: deploy website to example.com
         env:
           HOST: ${{ secrets.HOST }}
-        run: |
-          echo $HOST
-          ls
+          USER: ${{ secrets.USERNAME }}
+          USERANDHOST: format('{0}@{1}', ${{ secrets.HOST }}, ${{ secrets.USERNAME }})
+        run: echo $USERANDHOST
