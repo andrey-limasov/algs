@@ -20,8 +20,10 @@ jobs:
       # Runs a single command using the runners shell
       - uses: actions/checkout@master
       - name: deploy website to example.com
-        env:
-          HOST: ${{ secrets.HOST }}
-          USER: ${{ secrets.USERNAME }}
-          USERANDHOST: ${{ format('{0}@{1}', ${{ secrets.HOST }}, ${{ secrets.USERNAME }}) }}
-        run: echo $USERANDHOST
+        uses: cross-the-world/scp-pipeline@master
+        with:
+          host: ${{ secrets.HOST }}
+          user: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          local: "./test/*"
+          remote: ~/test/test1/
