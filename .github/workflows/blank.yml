@@ -20,6 +20,8 @@ jobs:
       # Runs a single command using the runners shell
       - uses: actions/checkout@master
       - name: deploy website to example.com
+        env:
+          HOST: ${{ secrets.HOST }}
         run: |
-          cat "hello" >> test.txt
+          echo $HOST
           ls
