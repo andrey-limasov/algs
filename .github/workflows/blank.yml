@@ -20,10 +20,9 @@ jobs:
       # Runs a single command using the runners shell
       - uses: actions/checkout@master
       - name: deploy website to example.com
-        uses: cross-the-world/scp-pipeline@master
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
-          user: ${{ secrets.USERNAME }}
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          local: "./test/*"
-          remote: ~/test/test1/
+          script: ls
